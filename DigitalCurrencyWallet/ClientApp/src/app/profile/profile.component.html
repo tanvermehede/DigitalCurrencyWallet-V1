@@ -1,0 +1,85 @@
+<div class="row">
+  <!-- Left Side Bar -->
+  <div class="col-md-3">
+    <app-nav-profile></app-nav-profile>
+  </div>
+  <!--Tab Content-->
+  <div class="col-md-5">
+    <form>
+      <div class="form-group row">
+        <label for="firstName" class="col-md-4 col-form-label">First Name</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="userProfileData.firstName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="lastName" class="col-md-4 col-form-label">Last Name</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="userProfileData.lastName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="birthDate" class="col-md-4 col-form-label">BirthDate</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="birthDate" name="birthDate" [(ngModel)]="userProfileData.birthDate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="gender" class="col-md-4 col-form-label">Gender</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="gender" name="gender" [(ngModel)]="userProfileData.gender">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="address" class="col-md-4 col-form-label">Address</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="address" name="address" [(ngModel)]="userProfileData.address">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="city" class="col-md-4 col-form-label">City</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="city" name="city" [(ngModel)]="userProfileData.city">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="postalCode" class="col-md-4 col-form-label">Postal Code</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="postalCode" name="postalCode" [(ngModel)]="userProfileData.postalCode">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="country" class="col-md-4 col-form-label">Country</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="country" name="country" [(ngModel)]="userProfileData.country">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="phoneNumber" class="col-md-4 col-form-label">Phone Number</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="userProfileData.phoneNumber">
+        </div>
+      </div>
+      <div class="btn-group">
+        <button (click)="saveProfile()" class="btn btn-primary">Save</button>
+        <button (click)="updateProfile()" class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <form>
+      <div class="form-group row">
+        <label for="email" class="col-md-4 col-form-label">Email</label>
+        <div class="col-md-8">
+          <textarea class="form-control" readonly>{{user.email}}</textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-md-4 col-form-label">Password</label>
+        <div class="col-md-8">
+          <input class="form-control" value="********" readonly />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

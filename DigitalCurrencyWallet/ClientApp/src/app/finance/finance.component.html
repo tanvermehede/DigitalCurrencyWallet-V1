@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <h3 class="panel-heading">Finance</h3>
+        <div class="panel-body">
+          <div class="row">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Currency Name</th>
+                  <th>Currency Rate</th>
+                  <th>My Balance</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{finance.currencyName}}</td>
+                  <td>{{finance.currencyRate}}</td>
+                  <td>{{finance.myBalance}}</td>
+                  <td class="button">
+                    <div class="text-right">
+                      <button class="btn btn-outline-primary mr-2" (click)="openDepositModel(deposit)">Deposit</button>
+                      <button class="btn btn-outline-primary mr-2" (click)="openWithdrawModel(withdraw)">Withdraw</button>
+                      <button class="btn btn-outline-primary" (click)="openGiveOfferModel(giveOffer)">Give Offer</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Deposit Model -->
+<ng-template #deposit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Deposit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-row">
+        <label class="col-md-4">Account Number</label>
+        <select class="form-control col-md-8">
+          <option selected>Choose...</option>
+          <option>01756531188</option>
+          <option>01640612781</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Deeposit Amount</label>
+        <div class="col-md-8">
+          <input [(ngModel)]="depositRequest.Amount" name="Amount" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Transaction Id</label>
+        <div class="col-md-8">
+          <input [(ngModel)]="depositRequest.TrxId" name="TrxId" class="form-control" type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button (click)="depositNow()" class="btn btn-primary">Submit</button>
+  </div>
+</ng-template>
+<!-- Withdrow Model -->
+<ng-template #withdraw let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Deposit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-row">
+        <label class="col-md-4">Account Number</label>
+        <select class="form-control col-md-8">
+          <option selected>Choose...</option>
+          <option>01756531188</option>
+          <option>01640612781</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Deeposit Amount</label>
+        <div class="col-md-8">
+          <input [(ngModel)]="depositRequest.Amount" name="Amount" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Transaction Id</label>
+        <div class="col-md-8">
+          <input [(ngModel)]="depositRequest.TrxId" name="TrxId" class="form-control" type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button (click)="depositNow()" class="btn btn-primary">Submit</button>
+  </div>
+</ng-template>
+<!-- Give Offer Model -->
+<ng-template #giveOffer let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Give Offer</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-row">
+        <label class="col-md-4">Currency Name</label>
+        <input class="form-control col-md-8" type="text">
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Enter Amount</label>
+        <input class="form-control col-md-8" type="text">
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Current Price</label>
+        <input class="form-control col-md-8" type="text">
+      </div>
+      <div class="form-row">
+        <label class="col-md-4">Enter Offer Price</label>
+        <input class="form-control col-md-8" type="text">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button (click)="depositRequest()" class="btn btn-primary">Submit</button>
+  </div>
+</ng-template>

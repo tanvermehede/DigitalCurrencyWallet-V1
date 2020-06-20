@@ -1,0 +1,111 @@
+<br /><br />
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <div class="card-body">
+      <ngb-tabset [justify]="currentJustify">
+        <ngb-tab title="Buy">
+          <ng-template ngbTabContent>
+            <br />
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-7">
+                      <input [(ngModel)]="enterAmount" name="enterAmount" value="{{enterAmount}}" class="form-control" type="text" placeholder="Enter Amount">
+                    </div>
+                    <div class="form-group col-md-5">
+                      <select class="form-control">
+                        <option selected>Choose...</option>
+                        <option>BTC</option>
+                        <option>ETH</option>
+                        <option>LTC</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-7">
+                      <input [(ngModel)]="userBuyData.price" name="price" value="{{price}}" class="form-control" type="text" placeholder="Original Price">
+                    </div>
+                    <div class="form-group col-md-5">
+                      <select class="form-control" (change)="calOption($event)">
+                        <option selected>Choose...</option>
+                        <option value="800">BDT</option>
+                        <option value="80">USD</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input [(ngModel)]="userBuyData.commission" name="commission" value="{{commission}}" class="form-control" type="text" placeholder="Commission">
+                  </div>
+                  <div class="form-group">
+                    <input [(ngModel)]="userBuyData.totalPrice" name="totalPrice" value="{{totalPrice}}" class="form-control" type="text" placeholder="Total Price">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-info">
+                    <div class="panel-body">
+                      Raw deche cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                      dreamcatcher synth.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm btn-block" (click)="buyRequest()">Buy Now</button>
+            </form>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Sell">
+          <ng-template ngbTabContent>
+            <br />
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-7">
+                      <input class="form-control" id="" type="text" placeholder="Amount">
+                    </div>
+                    <div class="form-group col-md-5">
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>BDT</option>
+                        <option>USD</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-7">
+                      <input class="form-control" id="" type="text" placeholder="Price">
+                    </div>
+                    <div class="form-group col-md-5">
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>BTC</option>
+                        <option>ETH</option>
+                        <option>LTC</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="" type="text" placeholder="Commission">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="" type="text" placeholder="Total Balance">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-info">
+                    <div class="panel-body">
+                      Raw deche cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                      dreamcatcher synth.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm btn-block">Sell Now</button>
+            </form>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>
